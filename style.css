@@ -1,0 +1,359 @@
+:root {
+    --sf-blue: #0070D2;
+    --sf-cloud-blue: #00A1E0;
+    --sf-light-blue: #E8F3FC;
+    --sf-gray: #747474;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+}
+
+body {
+    line-height: 1.6;
+    color: #333;
+}
+
+.section {
+    padding: 4rem 2rem;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Hero Section */
+.hero {
+    background: linear-gradient(135deg, var(--sf-light-blue), white);
+    padding: 6rem 0;
+    text-align: center;
+}
+
+.hero h1 {
+    font-size: 3rem;
+    color: var(--sf-blue);
+    margin-bottom: 3rem;
+}
+
+/* Hero header with icon */
+.hero-head {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    margin-bottom: 1.25rem;
+}
+
+.app-icon {
+    width: 56px;
+    height: 56px;
+    object-fit: contain;
+    display: block;
+    align-self: center;
+}
+
+.hero-head h1 {
+    margin: 0; /* remove default top/bottom margins so flex centering works reliably */
+    line-height: 1.05;
+}
+
+.hero-layout {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    /* max-width: 1600px; */
+    margin: 0 auto;
+}
+
+.hero-content {
+    width: 60%;
+    padding: 0 2rem;
+    text-align: center;
+}
+
+.side-graphic {
+    width: 20%;
+    display: flex;
+    justify-content: center;
+    align-items: stretch;
+    overflow: hidden;
+}
+
+.side-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+
+.side-graphic.left .side-image {
+    object-position: left center;
+}
+
+.side-graphic.right .side-image {
+    object-position: right center;
+}
+
+.hero h1 {
+    font-size: 3rem;
+    color: var(--sf-blue);
+    /* margin-bottom: 1.5rem; */
+}
+
+.hero p {
+    font-size: 1.25rem;
+    color: var(--sf-gray);
+    margin: 0 auto;
+}
+
+.placeholder-graphic {
+    width: 200px;
+    height: 200px;
+    background-color: var(--sf-light-blue);
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--sf-blue);
+}
+
+/* Contact Section */
+.contact {
+    background-color: white;
+    text-align: center;
+}
+
+.cta-buttons {
+    display: flex;
+    gap: 2rem;
+    justify-content: center;
+    margin-top: 2rem;
+}
+
+.cta-button {
+    padding: 1rem 2rem;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: all 0.3s ease;
+}
+
+.primary-button {
+    background-color: var(--sf-blue);
+    color: white;
+}
+
+.secondary-button {
+    background-color: white;
+    color: var(--sf-blue);
+    border: 2px solid var(--sf-blue);
+}
+
+.cta-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Videos Section */
+.videos {
+    background-color: var(--sf-light-blue);
+}
+
+.video-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.video-container {
+    aspect-ratio: 16/9;
+    background-color: #ddd;
+    border-radius: 10px;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--sf-gray);
+}
+
+/* Make embedded iframes fill the video container */
+.video-container iframe {
+    width: 100%;
+    height: 100%;
+    border: 0;
+    display: block;
+}
+
+/* Open Source Section */
+.open-source {
+    background-color: white;
+    text-align: center;
+}
+
+.resource-links {
+    display: flex;
+    gap: 2rem;
+    justify-content: center;
+    margin-top: 2rem;
+}
+
+h2 {
+    color: var(--sf-blue);
+    margin-bottom: 1.5rem;
+    font-size: 2.5rem;
+}
+
+p {
+    color: var(--sf-gray);
+    margin-bottom: 1rem;
+}
+
+/* Open-source section panels */
+.open-source-row {
+    display: flex;
+    gap: 2rem;
+    align-items: stretch;
+}
+
+.panel {
+    flex: 1 1 0;
+    padding: 3rem 2rem; /* increased vertical padding for better breathing room */
+    border-radius: 12px;
+    min-height: 240px; /* slightly taller panels */
+    display: flex;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.panel-content {
+    max-width: 640px;
+}
+
+.panel-text {
+    padding: 1rem;
+}
+
+.github-panel {
+    background: linear-gradient(180deg,#ffffff,#f6f8fa);
+    border: 1px solid #e1e4e8;
+    color: #24292e;
+}
+
+.github-icon {
+    position: absolute;
+    right: 12px;
+    bottom: 8px;
+    width: 160px;
+    opacity: 0.06;
+    pointer-events: none;
+}
+
+.github-panel h3 {
+    margin-top: 0;
+    color: #24292e;
+}
+
+.blog-panel {
+    background: linear-gradient(135deg,#e7fbf3,#dff7ea);
+    border: 1px solid #cfead7;
+    color: #0b3b2e;
+    box-shadow: 0 4px 10px rgba(3,59,43,0.03);
+}
+
+.trailhead-badge {
+    display: inline-block;
+    background: #00bfa5;
+    color: white;
+    padding: 0.35rem 0.75rem;
+    border-radius: 999px;
+    font-weight: 700;
+    font-size: 0.9rem;
+    margin-bottom: 0.75rem;
+}
+
+.github-badge {
+    display: inline-block;
+    background: #232925;
+    color: white;
+    padding: 0.35rem 0.75rem;
+    border-radius: 999px;
+    font-weight: 700;
+    font-size: 0.9rem;
+    margin-bottom: 0.75rem;
+}
+
+/* Responsive behavior: stack panels on small screens */
+@media (max-width: 900px) {
+    .open-source-row { flex-direction: column; }
+    .github-icon { width: 120px; right: 10px; bottom: 6px; }
+}
+
+
+/* Responsive adjustments for smaller screens */
+@media (max-width: 900px) {
+    .hero-layout {
+        gap: 1rem;
+    }
+
+    .side-graphic {
+        width: 15%;
+    }
+
+    .hero-content {
+        width: 70%;
+        padding: 0 1rem;
+    }
+
+    .hero h1 {
+        font-size: 2.5rem;
+        margin-bottom: 2rem;
+    }
+}
+
+@media (max-width: 700px) {
+    /* Stack graphics and content vertically on small screens */
+    .hero-layout {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .side-graphic {
+        width: 100%;
+        height: 160px;
+    }
+
+    .side-image {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    .hero-content {
+        order: 2;
+        width: 100%;
+        padding: 1rem;
+        text-align: center;
+    }
+
+    .side-graphic.left { order: 1; }
+    .side-graphic.right { order: 3; }
+
+    .hero h1 {
+        font-size: 2rem;
+        margin-bottom: 1rem;
+    }
+
+    .section { padding: 2.5rem 1rem; }
+}
+
+@media (max-width: 420px) {
+    /* Hide decorative side graphics if space is too tight */
+    .side-graphic { display: none; }
+    .hero-content { padding: 0.5rem; }
+}
