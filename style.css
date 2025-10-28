@@ -24,22 +24,15 @@ body {
 .container {
     max-width: 1200px;
     margin: 0 auto;
+    padding: 0 1rem;
 }
 
 /* Hero Section */
 .hero {
     background: linear-gradient(135deg, var(--sf-light-blue), white);
-    padding: 6rem 0rem 0rem 0rem;
-    text-align: center;
+    padding: 6rem 0 0;
 }
 
-.hero h1 {
-    font-size: 3rem;
-    color: var(--sf-blue);
-    margin-bottom: 3rem;
-}
-
-/* Hero header with icon */
 .hero-head {
     display: flex;
     align-items: center;
@@ -48,348 +41,102 @@ body {
     margin-bottom: 1.25rem;
 }
 
-.app-icon {
-    width: 56px;
-    height: 56px;
-    object-fit: contain;
-    display: block;
-    align-self: center;
-}
+.app-icon { width: 56px; height: 56px; object-fit: contain; }
 
-.hero-head h1 {
-    margin: 0; /* remove default top/bottom margins so flex centering works reliably */
-    line-height: 1.05;
-}
+.hero-head h1 { margin: 0; line-height: 1.05; color: var(--sf-blue); font-size: 2.6rem; }
 
 .hero-layout {
     display: flex;
     align-items: center;
-    width: 100%;
-    /* max-width: 1600px; */
-    margin: 0 auto;
-}
-
-.hero-content {
-    width: 60%;
-    padding: 0 2rem;
-    text-align: center;
-}
-
-.side-graphic {
-    width: 20%;
-    display: flex;
-    justify-content: center;
-    align-items: stretch;
-    overflow: hidden;
-}
-
-.side-image {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    object-position: center;
-}
-
-.side-graphic.left .side-image {
-    object-position: left center;
-}
-
-.side-graphic.right .side-image {
-    object-position: right center;
-}
-
-.hero h1 {
-    font-size: 3rem;
-    color: var(--sf-blue);
-    /* margin-bottom: 1.5rem; */
-}
-
-.hero p {
-    font-size: 1.25rem;
-    color: var(--sf-gray);
-    margin: 0 auto;
-}
-
-.placeholder-graphic {
-    width: 200px;
-    height: 200px;
-    background-color: var(--sf-light-blue);
-    border-radius: 10px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: var(--sf-blue);
-}
-
-/* Contact Section */
-.contact {
-    background-color: white;
-    text-align: center;
-}
-
-.cta-buttons {
-    display: flex;
     gap: 2rem;
-    justify-content: center;
-    margin-top: 2rem;
+    width: 100%;
+    margin: 0 auto;
 }
 
-.cta-button {
-    padding: 1rem 2rem;
-    border-radius: 5px;
-    text-decoration: none;
-    font-weight: bold;
-    transition: all 0.3s ease;
-}
+.side-graphic { flex: 0 0 18%; display:flex; align-items:stretch; justify-content:center; overflow:hidden; }
+.side-image { width:100%; height:100%; object-fit:cover; object-position:center; }
+.side-graphic.left .side-image { object-position: left center; }
+.side-graphic.right .side-image { object-position: right center; }
 
-.primary-button {
-    background-color: var(--sf-blue);
-    color: white;
-}
+.hero-content { flex: 1 1 60%; padding: 0 1.25rem; text-align:center; }
+.hero-content p { font-size:1.15rem; color:var(--sf-gray); margin-bottom:0.6rem; }
 
-.secondary-button {
-    background-color: white;
-    color: var(--sf-blue);
-    border: 2px solid var(--sf-blue);
-}
+.placeholder-graphic { width:200px; height:200px; background-color:var(--sf-light-blue); border-radius:10px; display:flex; align-items:center; justify-content:center; color:var(--sf-blue); }
 
-.cta-button:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-}
+
+/* Contact/CTA Section */
+.contact { background-color: white; }
+.cta-row { display:flex; gap:1rem; justify-content:center; flex-wrap:wrap; margin-top:1rem; }
+.cta-button { padding:0.9rem 1.25rem; border-radius:6px; text-decoration:none; font-weight:700; transition:transform .2s ease, box-shadow .2s ease; display:inline-block; }
+.primary-button { background:var(--sf-blue); color:#fff; }
+.secondary-button { background:#fff; color:var(--sf-blue); border:2px solid var(--sf-blue); }
+.cta-button:hover { transform:translateY(-3px); box-shadow:0 6px 14px rgba(0,0,0,0.08); }
+
 
 /* Videos Section */
-.videos {
-    background-color: var(--sf-light-blue);
-}
+.videos { background-color: var(--sf-light-blue); }
+.video-grid { display:flex; gap:1rem; margin-top:1.25rem; flex-wrap:wrap; justify-content:center; }
+.video-container { flex:1 1 320px; max-width:640px; aspect-ratio:16/9; background:#ddd; border-radius:10px; overflow:hidden; display:block; }
+.video-container iframe { width:100%; height:100%; border:0; display:block; }
 
-.video-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 2rem;
-    margin-top: 2rem;
-}
-
-.video-container {
-    aspect-ratio: 16/9;
-    background-color: #ddd;
-    border-radius: 10px;
-    overflow: hidden;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: var(--sf-gray);
-}
-
-/* Make embedded iframes fill the video container */
-.video-container iframe {
-    width: 100%;
-    height: 100%;
-    border: 0;
-    display: block;
-}
 
 /* Open Source Section */
-.open-source {
-    background-color: white;
-    text-align: center;
-}
+.open-source { background:white; }
+.open-source-row { display:flex; gap:1rem; align-items:stretch; flex-wrap:wrap; }
+.panel { flex:1 1 320px; padding:2rem; border-radius:12px; min-height:200px; position:relative; overflow:hidden; display:flex; align-items:center; }
+.panel-content { max-width:640px; }
+.panel-text { padding:0.5rem 0; color:var(--sf-gray); }
 
-.resource-links {
-    display: flex;
-    gap: 2rem;
-    justify-content: center;
-    margin-top: 2rem;
-}
+.github-panel { background:linear-gradient(180deg,#fff,#f6f8fa); border:1px solid #e1e4e8; color:#24292e; }
+.blog-panel { background:linear-gradient(135deg,#e7fbf3,#dff7ea); border:1px solid #cfead7; color:#0b3b2e; box-shadow:0 4px 10px rgba(3,59,43,0.03); }
 
-h2 {
-    color: var(--sf-blue);
-    margin-bottom: 1.5rem;
-    font-size: 2.5rem;
-}
+.badge { display:inline-block; padding:0.35rem 0.75rem; border-radius:999px; font-weight:700; font-size:0.9rem; margin-bottom:0.75rem; }
+.trailhead-badge { background:#00bfa5; color:#fff; border-radius:999px; display:inline-block; padding:0.35rem 0.75rem; font-weight:700; font-size:0.9rem; margin-bottom:0.75rem; }
+.github-badge { background:#232925; color:#fff; border-radius:999px; display:inline-block; padding:0.35rem 0.75rem; font-weight:700; font-size:0.9rem; margin-bottom:0.75rem; }
+.github-icon { position:absolute; right:12px; bottom:8px; width:160px; opacity:0.06; pointer-events:none; }
 
-p {
-    color: var(--sf-gray);
-    margin-bottom: 1rem;
-}
-
-/* Open-source section panels */
-.open-source-row {
-    display: flex;
-    gap: 2rem;
-    align-items: stretch;
-}
-
-.panel {
-    flex: 1 1 0;
-    padding: 3rem 2rem; /* increased vertical padding for better breathing room */
-    border-radius: 12px;
-    min-height: 240px; /* slightly taller panels */
-    display: flex;
-    align-items: center;
-    position: relative;
-    overflow: hidden;
-}
-
-.panel-content {
-    max-width: 640px;
-}
-
-.panel-text {
-    padding: 1rem;
-}
-
-.github-panel {
-    background: linear-gradient(180deg,#ffffff,#f6f8fa);
-    border: 1px solid #e1e4e8;
-    color: #24292e;
-}
-
-.github-icon {
-    position: absolute;
-    right: 12px;
-    bottom: 8px;
-    width: 160px;
-    opacity: 0.06;
-    pointer-events: none;
-}
-
-.github-panel h3 {
-    margin-top: 0;
-    color: #24292e;
-}
-
-.blog-panel {
-    background: linear-gradient(135deg,#e7fbf3,#dff7ea);
-    border: 1px solid #cfead7;
-    color: #0b3b2e;
-    box-shadow: 0 4px 10px rgba(3,59,43,0.03);
-}
-
-.trailhead-badge {
-    display: inline-block;
-    background: #00bfa5;
-    color: white;
-    padding: 0.35rem 0.75rem;
-    border-radius: 999px;
-    font-weight: 700;
-    font-size: 0.9rem;
-    margin-bottom: 0.75rem;
-}
-
-.github-badge {
-    display: inline-block;
-    background: #232925;
-    color: white;
-    padding: 0.35rem 0.75rem;
-    border-radius: 999px;
-    font-weight: 700;
-    font-size: 0.9rem;
-    margin-bottom: 0.75rem;
-}
 
 /* Salesforce-styled panels for contact / CTA cards */
-.salesforce-panel {
-    background: linear-gradient(180deg, var(--sf-cloud-blue), var(--sf-blue));
-    border: 1px solid rgba(0,0,0,0.06);
-    color: white;
-    box-shadow: 0 8px 20px rgba(0,112,210,0.12);
-}
+.salesforce-panel { background:linear-gradient(180deg,var(--sf-cloud-blue),var(--sf-blue)); border:1px solid rgba(0,0,0,0.06); color:#fff; box-shadow:0 8px 20px rgba(0,112,210,0.12); }
+.salesforce-panel h3 { margin-top:0; color:#fff; }
+.salesforce-panel .panel-text { color:rgba(255,255,255,0.95); }
+.salesforce-badge { display:inline-block; background:rgba(255,255,255,0.12); color:#fff; padding:0.35rem 0.75rem; border-radius:999px; font-weight:700; font-size:0.9rem; margin-bottom:0.75rem; }
+.salesforce-panel .cta-button { background:#fff; color:var(--sf-blue); border:2px solid rgba(255,255,255,0.08); }
 
-.salesforce-panel h3 {
-    margin-top: 0;
-    color: #ffffff;
-}
+/* Panel-specific button theming to match badges */
+.github-panel .cta-button.primary-button { background:#232925; color:#fff; border:none; }
+.github-panel .cta-button.primary-button:hover { filter:brightness(1.05); }
+.blog-panel .cta-button.secondary-button { background:#00bfa5; color:#fff; border:none; }
+.blog-panel .cta-button.secondary-button:hover { filter:brightness(0.95); }
 
-.salesforce-panel .panel-text {
-    color: rgba(255,255,255,0.9);
-}
+/* Section headings (H2) should match Salesforce blue and be slightly smaller than hero H1 */
+h2 { color: var(--sf-blue); margin-bottom: 1rem; font-size: 2.2rem; }
 
-.salesforce-badge {
-    display: inline-block;
-    background: rgba(255,255,255,0.12);
-    color: white;
-    padding: 0.35rem 0.75rem;
-    border-radius: 999px;
-    font-weight: 700;
-    font-size: 0.9rem;
-    margin-bottom: 0.75rem;
-}
-
-/* Make the default action button inside blue panels stand out */
-.salesforce-panel .cta-button {
-    background: white;
-    color: var(--sf-blue);
-    border: 2px solid rgba(255,255,255,0.08);
-}
 
 /* Responsive adjustments for smaller screens */
 @media (max-width: 900px) {
-    .hero-layout {
-        gap: 1rem;
-    }
-
-    .side-graphic {
-        width: 15%;
-    }
-
-    .hero-content {
-        width: 70%;
-        padding: 0 1rem;
-    }
-
-    .hero h1 {
-        font-size: 2.5rem;
-        margin-bottom: 2rem;
-    }
-
-    h2 { font-size: 2.5rem; }
-
-    .open-source-row { flex-direction: column; }
-    
-    .github-icon { width: 120px; right: 10px; bottom: 6px; }
+    .hero-layout { gap: 1rem; }
+    .side-graphic { flex:0 0 14%; }
+    .hero-content { padding:0 1rem; }
+    .video-container { flex-basis: 300px; }
+    .open-source-row { gap:0.75rem; }
+    .github-icon { width:120px; right:10px; bottom:6px; }
 }
 
-@media (max-width: 700px) {
-    /* Stack graphics and content vertically on small screens */
-    .hero-layout {
-        flex-direction: column;
-        align-items: stretch;
-    }
-
-    .side-graphic {
-        width: 100%;
-        height: 160px;
-    }
-
-    .side-image {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-    }
-
-    .hero-content {
-        order: 2;
-        width: 100%;
-        padding: 1rem;
-        text-align: center;
-    }
-
-    .side-graphic.left { order: 1; }
-    .side-graphic.right { order: 3; }
-
-    .hero h1 {
-        font-size: 2rem;
-        margin-bottom: 1rem;
-    }
-
-    h2 { font-size: 2rem; }
-
-    .section { padding: 2.5rem 1rem; }
+@media (max-width:700px) {
+    .hero-layout { flex-direction:column; align-items:stretch; }
+    .side-graphic { width:100%; height:160px; order:0; }
+    .hero-content { order:1; width:100%; padding:1rem; }
+    .hero-head { justify-content:flex-start; padding-left:0.5rem; }
+    .hero-head h1 { font-size:1.25rem; }
+    h2 { font-size:2rem; }
+    .section { padding:2.5rem 1rem; }
 }
 
-@media (max-width: 420px) {
-    /* Hide decorative side graphics if space is too tight */
-    .side-graphic { display: none; }
-    .hero-content { padding: 0.5rem; }
+@media (max-width:420px) {
+    .side-graphic { display:none; }
+    .hero-content { padding:0.5rem; }
 }
+
+/* Utility spacing */
+.mt-1 { margin-top: 1rem !important; }
