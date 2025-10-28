@@ -29,7 +29,7 @@ body {
 /* Hero Section */
 .hero {
     background: linear-gradient(135deg, var(--sf-light-blue), white);
-    padding: 6rem 0;
+    padding: 6rem 0rem 0rem 0rem;
     text-align: center;
 }
 
@@ -288,12 +288,40 @@ p {
     margin-bottom: 0.75rem;
 }
 
-/* Responsive behavior: stack panels on small screens */
-@media (max-width: 900px) {
-    .open-source-row { flex-direction: column; }
-    .github-icon { width: 120px; right: 10px; bottom: 6px; }
+/* Salesforce-styled panels for contact / CTA cards */
+.salesforce-panel {
+    background: linear-gradient(180deg, var(--sf-cloud-blue), var(--sf-blue));
+    border: 1px solid rgba(0,0,0,0.06);
+    color: white;
+    box-shadow: 0 8px 20px rgba(0,112,210,0.12);
 }
 
+.salesforce-panel h3 {
+    margin-top: 0;
+    color: #ffffff;
+}
+
+.salesforce-panel .panel-text {
+    color: rgba(255,255,255,0.9);
+}
+
+.salesforce-badge {
+    display: inline-block;
+    background: rgba(255,255,255,0.12);
+    color: white;
+    padding: 0.35rem 0.75rem;
+    border-radius: 999px;
+    font-weight: 700;
+    font-size: 0.9rem;
+    margin-bottom: 0.75rem;
+}
+
+/* Make the default action button inside blue panels stand out */
+.salesforce-panel .cta-button {
+    background: white;
+    color: var(--sf-blue);
+    border: 2px solid rgba(255,255,255,0.08);
+}
 
 /* Responsive adjustments for smaller screens */
 @media (max-width: 900px) {
@@ -314,6 +342,12 @@ p {
         font-size: 2.5rem;
         margin-bottom: 2rem;
     }
+
+    h2 { font-size: 2.5rem; }
+
+    .open-source-row { flex-direction: column; }
+    
+    .github-icon { width: 120px; right: 10px; bottom: 6px; }
 }
 
 @media (max-width: 700px) {
@@ -348,6 +382,8 @@ p {
         font-size: 2rem;
         margin-bottom: 1rem;
     }
+
+    h2 { font-size: 2rem; }
 
     .section { padding: 2.5rem 1rem; }
 }
