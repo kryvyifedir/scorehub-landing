@@ -85,8 +85,8 @@ p { color:var(--sf-gray) }
 /* Open Source Section */
 .open-source { background:white; }
 .open-source-row { display:flex; gap:1rem; margin-top:1.25rem; align-items:stretch; flex-wrap:wrap; }
-.panel { flex:1 1 320px; padding:2rem; border-radius:12px; min-height:200px; position:relative; overflow:hidden; display:flex; align-items:center; }
-.panel-content { max-width:640px; }
+.panel { flex:1 1 320px; padding:2rem; border-radius:12px; min-height:200px; position:relative; overflow:hidden; display:flex; flex-direction:column; align-items:stretch; }
+.panel-content { max-width:640px; display:flex; flex-direction:column; justify-content:space-between; align-items:flex-start; height:100%; }
 .panel-text { padding:0.5rem 0; color:var(--sf-gray); }
 
 .github-panel { background:linear-gradient(180deg,#fff,#f6f8fa); border:1px solid #e1e4e8; color:#24292e; }
@@ -98,24 +98,19 @@ p { color:var(--sf-gray) }
 .github-icon { position:absolute; right:12px; bottom:8px; width:160px; opacity:0.06; pointer-events:none; }
 
 
-/* Salesforce-styled panels for contact / CTA cards */
 .salesforce-panel { background:linear-gradient(180deg,var(--sf-cloud-blue),var(--sf-blue)); border:1px solid rgba(0,0,0,0.06); color:#fff; box-shadow:0 8px 20px rgba(0,112,210,0.12); }
 .salesforce-panel h3 { margin-top:0; color:#fff; }
 .salesforce-panel .panel-text { color:rgba(255,255,255,0.95); }
 .salesforce-badge { display:inline-block; background:rgba(255,255,255,0.12); color:#fff; padding:0.35rem 0.75rem; border-radius:999px; font-weight:700; font-size:0.9rem; margin-bottom:0.75rem; }
 .salesforce-panel .cta-button { background:#fff; color:var(--sf-blue); border:2px solid rgba(255,255,255,0.08); }
 
-/* Panel-specific button theming to match badges */
 .github-panel .cta-button.primary-button { background:#232925; color:#fff; border:none; }
 .github-panel .cta-button.primary-button:hover { filter:brightness(1.05); }
 .blog-panel .cta-button.secondary-button { background:#00bfa5; color:#fff; border:none; }
 .blog-panel .cta-button.secondary-button:hover { filter:brightness(0.95); }
 
-/* Section headings (H2) should match Salesforce blue and be slightly smaller than hero H1 */
 h2 { color: var(--sf-blue); margin-bottom: 1rem; font-size: 2.2rem; }
 
-
-/* Responsive adjustments for smaller screens */
 @media (max-width: 900px) {
     .hero-layout { gap: 1rem; }
     .side-graphic { flex:0 0 14%; }
@@ -130,8 +125,6 @@ h2 { color: var(--sf-blue); margin-bottom: 1rem; font-size: 2.2rem; }
     .side-graphic { width:100%; height:160px; order:0; }
     .hero-content { order:1; width:100%; padding:1rem; }
     .hero-head { justify-content:flex-start; padding-left:0.5rem; }
-    .hero-head h1 { font-size:1.25rem; }
-    h2 { font-size:2rem; }
     .section { padding:2.5rem 1rem; }
 }
 
