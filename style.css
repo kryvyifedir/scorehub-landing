@@ -58,8 +58,10 @@ body {
 .side-graphic.left .side-image { object-position: left center; }
 .side-graphic.right .side-image { object-position: right center; }
 
+p { color:var(--sf-gray) }
+
 .hero-content { flex: 1 1 60%; padding: 0 1.25rem; text-align:center; }
-.hero-content p { font-size:1.15rem; color:var(--sf-gray); margin-bottom:0.6rem; }
+.hero-content p { font-size:1.15rem; margin-bottom:0.6rem; }
 
 .placeholder-graphic { width:200px; height:200px; background-color:var(--sf-light-blue); border-radius:10px; display:flex; align-items:center; justify-content:center; color:var(--sf-blue); }
 
@@ -82,7 +84,7 @@ body {
 
 /* Open Source Section */
 .open-source { background:white; }
-.open-source-row { display:flex; gap:1rem; align-items:stretch; flex-wrap:wrap; }
+.open-source-row { display:flex; gap:1rem; margin-top:1.25rem; align-items:stretch; flex-wrap:wrap; }
 .panel { flex:1 1 320px; padding:2rem; border-radius:12px; min-height:200px; position:relative; overflow:hidden; display:flex; align-items:center; }
 .panel-content { max-width:640px; }
 .panel-text { padding:0.5rem 0; color:var(--sf-gray); }
