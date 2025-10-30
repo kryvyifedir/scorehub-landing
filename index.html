@@ -7,6 +7,9 @@
     <link rel="stylesheet" href="style.css">
     <link rel="icon" type="image/png" href="img/appicon.png">
     <link rel="apple-touch-icon" href="img/appicon.png">
+    <!-- Calendly widget assets (popup will be opened via JS on the demo button) -->
+    <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
+    <script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript" async></script>
 </head>
 <body>
     <!-- Hero Section -->
@@ -117,4 +120,41 @@
         </div>
     </section>
 </body>
+        <!-- Calendly popup trigger: keep button styling unchanged, open popup on click -->
+        <script type="text/javascript">
+            (function() {
+                var calendlyUrl = 'https://calendly.com/f-kryvyi-scorehub/30min';
+                function openCalendly() {
+                    if (window.Calendly && typeof window.Calendly.initPopupWidget === 'function') {
+                        Calendly.initPopupWidget({ url: calendlyUrl });
+                    } else if (window.Calendly && typeof window.Calendly.showPopupWidget === 'function') {
+                        // fallback to alternate API name
+                        Calendly.showPopupWidget(calendlyUrl);
+                    } else {
+                        // If the Calendly script hasn't loaded yet, wait briefly and try again
+                        var tries = 0;
+                        var i = setInterval(function() {
+                            tries += 1;
+                            if (window.Calendly && typeof window.Calendly.initPopupWidget === 'function') {
+                                clearInterval(i);
+                                Calendly.initPopupWidget({ url: calendlyUrl });
+                            } else if (tries > 20) { // ~2s timeout
+                                clearInterval(i);
+                                // As a graceful fallback, open the Calendly scheduling page in a new tab
+                                window.open(calendlyUrl, '_blank');
+                            }
+                        }, 100);
+                    }
+                }
+
+                document.addEventListener('DOMContentLoaded', function() {
+                    var el = document.getElementById('calendly-link');
+                    if (!el) return;
+                    el.addEventListener('click', function(e) {
+                        e.preventDefault();
+                        openCalendly();
+                    });
+                });
+            })();
+        </script>
 </html>
