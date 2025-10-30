@@ -1,6 +1,6 @@
 # ScoreHub.es - landing page
 
-A static landing page for ScoreHub — a gamification solution that brings achievements-style mechanics to Salesforce.
+A static landing page for ScoreHub - a gamification solution that brings achievements-style mechanics to Salesforce.
 
 
 ## About
